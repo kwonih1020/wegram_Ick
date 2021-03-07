@@ -8,7 +8,7 @@ export default function App() {
   };
   return (
     <View style={styles.contianer}>
-      <Text> SignInPage </Text>
+      <Text> SignInPages </Text>
 
       <PopupButton CustomAlert={CustomAlert} title={'로그인페이지 팝업'} />
     </View>
