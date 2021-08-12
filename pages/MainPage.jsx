@@ -58,10 +58,8 @@ export default function MainPage({ navigation }) {
                       <Icon name="paper-plane" style={{ color: 'deeppink' }} />
                     </Col>
                     <Col size={6} style={{ padding: 15 }}>
-                      <Text>이야기 하고 싶은 친구들에게</Text>
-                      <Text style={{ fontWeight: '700' }}>
-                        wegram을 전하세요
-                      </Text>
+                      <Text>Tell your friends the story</Text>
+                      <Text style={{ fontWeight: '700' }}>wegram</Text>
                     </Col>
                   </Grid>
                 </Animatable.View>

@@ -37,21 +37,21 @@ export default function MyPage({ navigation }) {
       <Content>
         <Thumbnail large source={my} style={styles.thumbnail} />
         <Text style={styles.myTitle}>Welcome to wegram</Text>
-        <Text style={{ alignSelf: 'center' }}>kwonis1130@gmail.com</Text>
+        {/* <Text style={{ alignSelf: 'center' }}>kwonis1130@gmail.com</Text> */}
         <TouchableOpacity style={{ marginTop: 20 }} onPress={logoutFunc}>
-          <Text style={styles.logout}>로그아웃</Text>
+          <Text style={styles.logout}>Logout</Text>
         </TouchableOpacity>
         <Grid style={{ marginTop: 30 }}>
           <Col size={3} style={{ alignItems: 'center' }}>
-            <Text style={styles.category}>작성한 글</Text>
+            <Text style={styles.category}>Posts</Text>
             <Text style={styles.categoryContent}>7</Text>
           </Col>
           <Col size={3} style={{ alignItems: 'center' }}>
-            <Text style={styles.category}>작성한 댓글</Text>
+            <Text style={styles.category}>Comments</Text>
             <Text style={styles.categoryContent}>21</Text>
           </Col>
           <Col size={3} style={{ alignItems: 'center' }}>
-            <Text style={styles.category}>방문 횟수</Text>
+            <Text style={styles.category}>Visited</Text>
             <Text style={styles.categoryContent}>321</Text>
           </Col>
         </Grid>

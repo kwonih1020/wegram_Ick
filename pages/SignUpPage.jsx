@@ -34,35 +34,35 @@ export default function SignUpPage({ navigation }) {
 
   const doSignUp = () => {
     if (nickName == '') {
-      setNickNameError('닉네임을 입력해주세요');
+      setNickNameError('Please enter your Nickname');
       return false;
     } else {
       setNickNameError('');
     }
 
     if (email == '') {
-      setEmailError('이메일을 입력해주세요');
+      setEmailError('Please enter your Email');
       return false;
     } else {
       setEmailError('');
     }
 
     if (password == '') {
-      setPasswordError('비밀번호를 입력해주세요');
+      setPasswordError('Please enter your password');
       return false;
     } else {
       setPasswordError('');
     }
 
     if (passwordConfirm == '') {
-      setPasswordConfirmError('비밀번호 확인을 입력해주세요');
+      setPasswordConfirmError('Please confirm your password);
       return false;
     } else {
       setPasswordConfirmError('');
     }
 
     if (password !== passwordConfirm) {
-      setPasswordConfirmError('비밀번호가 서로 일치 하지 않습니다.');
+      setPasswordConfirmError('Passwords donot match');
       return false;
     } else {
       setPasswordConfirmError('');

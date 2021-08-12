@@ -21,31 +21,30 @@ export default function SignInPage({ navigation }) {
     });
 
     setTimeout(() => {
-			AsyncStorage.getItem('session', (err, result) => {
-      console.log('ASYNCSTORAGE');
-      console.log(result);
-      if (result) {
-        navigation.push('TabNavigator');
-      } else {
-        setReady(true);
-      }
-    });
+      AsyncStorage.getItem('session', (err, result) => {
+        console.log('ASYNCSTORAGE');
+        console.log(result);
+        if (result) {
+          navigation.push('TabNavigator');
+        } else {
+          setReady(true);
+        }
+      });
       setReady(true);
     }, 1000);
-    
   }, []);
 
   const doSignIn = () => {
     //Email 로그인 버튼을 누를 때 실행되는 함수
     if (email == '') {
-      setEmailError('이메일을 입력해주세요');
+      setEmailError('Please enter your Email');
       return false;
     } else {
       setEmailError('');
     }
 
     if (password == '') {
-      setPasswordError('비밀번호를 입력해주세요');
+      setPasswordError('Please enter password');
       return false;
     } else {
       setPasswordError('');
@@ -91,10 +90,10 @@ export default function SignInPage({ navigation }) {
             <Text>Facebook 로그인</Text>
           </Button> */}
           <Button full style={styles.emailSignIn} onPress={doSignIn}>
-            <Text>Email 로그인</Text>
+            <Text>Email Login</Text>
           </Button>
           <Button full style={styles.emailSignUp} onPress={goSignUp}>
-            <Text style={{ color: '#333' }}>회원가입</Text>
+            <Text style={{ color: '#333' }}>Signup</Text>
           </Button>
         </Content>
       </ImageBackground>
