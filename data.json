@@ -1,0 +1,45 @@
+{
+    "diary": [{
+        "id": 0,
+        "title": "사는 법 -  나태주",
+        "author": "스파르타코딩",
+        "desc": "그리운 날은 그림을 그리고 \n쓸쓸한 날은 음악을 들었다 \n그리고도 남는 날은 너를 생각해야만 했다 ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F1-min.png?alt=media&token=9ffe20fb-c287-444e-b168-0051e8be476b"
+    }, {
+        "id": 1,
+        "title": "꽃 멀 미 - 이해인",
+        "author": "스파르타코딩",
+        "desc": "사람들을 너무 많이 만나면 말에 취해서 멀미가 나고, \n꽃들을 너무 많이 대하면 향기에 취해서 멀미가 나지. \n살아 있는 것은 아픈 것, 아름다운 것은 어지러운 것. \n너무 많아도 싫지 않은 꽃을 보면서 나는 더욱 사람들을 사랑하기 시작하지. \n사람들에게도 꽃처럼 향기가 있다는 걸 새롭게 배우기 시작하지.",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F2-min.png?alt=media&token=b2774d20-4e4c-452f-9d40-eedb32b28fcd"
+    }, {
+        "id": 2,
+        "title": "너에게 묻는다 - 안도현",
+        "author": "스파르타코딩",
+        "desc": "연탄재 함부로 발로 차지 마라 \n너는 누구에게 한 번이라도 \n뜨거운 사람이었느냐",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F3-min.png?alt=media&token=78afb2c6-15cf-40e2-9def-37b04194ac67"
+    }, {
+        "id": 3,
+        "title": "반달 - 정호승",
+        "author": "스파르타코딩",
+        "desc": "아무도 반달을 사랑하지 않는다면 반달이 보름달이 될 수 있겠는가 \n보름달이 반달이 되지 않는다면 사랑은 그 얼마나 오만할 것인가 ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F4-min.png?alt=media&token=d6cd3e2a-98fb-4cce-9f31-69fb1880ee35"
+    }, {
+        "id": 4,
+        "title": "꿈 - 황인숙",
+        "author": "스파르타코딩",
+        "desc": "가끔 네 꿈을 꾼다 전에는 \n꿈이라도 꿈인 줄 모르겠더니 \n이제는 너를 보면 \n아, 꿈이로구나 알아챈다",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F5-min.png?alt=media&token=e0f10efb-5b93-4be9-bc2e-edf2b1bb8619"
+    }, {
+        "id": 5,
+        "title": "우주를 건너는 법 - 박찬일",
+        "author": "스파르타코딩",
+        "desc": "달팽이와 함께! \n달팽이는 움직이지 않는다 \n다만 도달할 뿐이다",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F6-min.png?alt=media&token=bbc87679-4084-40ad-b6cd-01e808983fa4"
+    }, {
+        "id": 6,
+        "title": "모과 - 서안나",
+        "author": "스파르타코딩",
+        "desc": "먹지는 못하고 바라만 보다가 \n바라만 보며 향기만 맡다 \n충치처럼 꺼멓게 썩어버리는 \n그런 첫사랑이 내게도 있었다",
+        "image": "https://firebasestorage.googleapis.com/v0/b/sparta-study-plus.appspot.com/o/lecture%2F7-min.png?alt=media&token=5ab081da-08e0-4f98-9ea4-d6fe7b42a697"
+    }, ]
+}
