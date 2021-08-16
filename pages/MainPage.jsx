@@ -75,7 +75,7 @@ export default function MainPage({ navigation }) {
             console.log('바닥 가까이 감: 리프레시');
             let nextData = await getNextData(next, setNext);
             if (nextData == 0) {
-              Alert.alert('더이상 글이 없어요!');
+              Alert.alert('No more stories!');
             } else {
               let newData = [...data, ...nextData];
               console.log(newData);

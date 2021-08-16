@@ -48,11 +48,10 @@ export default function AddPage() {
 
   const getPermission = async () => {
     if (Platform.OS !== 'web') {
-      const {
-        status,
-      } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== 'granted') {
-        alert('게시글을 업로드하려면 사진첩 권한이 필요합니다.');
+        alert('Need permissions to access to photos.');
       }
     }
   };
@@ -77,14 +76,14 @@ export default function AddPage() {
     data.image = imageUrl;
     let result = await addDiary(data);
     if (result) {
-      Alert.alert('글이 성공적으로 등록되었습니다!');
+      Alert.alert('Successfully added your post');
       setTitle('');
       setContent('');
       setImage(tempImage);
       setImageUri('');
       setProgress(false);
-    }else {
-      Alert.alert('문제가 있네요! 다시 등록해주세요!')
+    } else {
+      Alert.alert('oops! Please try again!');
       setProgress(false);
     }
   };
@@ -131,7 +130,7 @@ export default function AddPage() {
 
         <Item regular style={styles.title}>
           <Input
-            placeholder="다이어리 제목을 입력해주세요!"
+            placeholder="Title of your story"
             style={{ fontSize: 13 }}
             value={title}
             onChangeText={(text) => setTitle(text)}
@@ -141,14 +140,14 @@ export default function AddPage() {
           <Textarea
             rowSpan={5}
             bordered
-            placeholder="내용을 입력해주세요"
+            placeholder="Your Story"
             style={styles.content}
             value={content}
             onChangeText={(text) => setContent(text)}
           />
         </Form>
         <Button full style={styles.uploadButton} onPress={() => upload()}>
-          <Text>등록</Text>
+          <Text>Upload</Text>
         </Button>
       </Content>
     </Container>

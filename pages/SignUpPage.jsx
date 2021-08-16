@@ -55,7 +55,7 @@ export default function SignUpPage({ navigation }) {
     }
 
     if (passwordConfirm == '') {
-      setPasswordConfirmError('Please confirm your password);
+      setPasswordConfirmError('Please confirm your password');
       return false;
     } else {
       setPasswordConfirmError('');
@@ -94,32 +94,32 @@ export default function SignUpPage({ navigation }) {
           </Text>
           <Form style={styles.form}>
             <ItemInput
-              title={'닉네임'}
+              title={'Nickname'}
               type={'nickName'}
               error={nickNameError}
               setFunc={setNickName}
             />
             <ItemInput
-              title={'이메일'}
+              title={'Email'}
               type={'email'}
               error={emailError}
               setFunc={setEmail}
             />
             <ItemInput
-              title={'비밀번호'}
+              title={'Password'}
               type={'password'}
               error={passwordError}
               setFunc={setPassword}
             />
             <ItemInput
-              title={'비밀번호 확인'}
+              title={'Confirm Password'}
               type={'password'}
               error={passwordConfirmError}
               setFunc={setPasswordConfirm}
             />
           </Form>
           <Button full style={styles.emailSignUp} onPress={doSignUp}>
-            <Text>등록</Text>
+            <Text>Sign Up</Text>
           </Button>
         </Content>
       </ImageBackground>

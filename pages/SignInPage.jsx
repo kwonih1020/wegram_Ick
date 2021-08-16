@@ -74,13 +74,13 @@ export default function SignInPage({ navigation }) {
           </Text>
           <Form style={styles.form}>
             <ItemInput
-              title={'이메일'}
+              title={'Email'}
               type={'email'}
               setFunc={setEmailFunc}
               error={emailError}
             />
             <ItemInput
-              title={'비밀번호'}
+              title={'Password'}
               type={'password'}
               setFunc={setPasswordFunc}
               error={passwordError}
@@ -90,10 +90,10 @@ export default function SignInPage({ navigation }) {
             <Text>Facebook 로그인</Text>
           </Button> */}
           <Button full style={styles.emailSignIn} onPress={doSignIn}>
-            <Text>Email Login</Text>
+            <Text>Login</Text>
           </Button>
           <Button full style={styles.emailSignUp} onPress={goSignUp}>
-            <Text style={{ color: '#333' }}>Signup</Text>
+            <Text style={{ color: '#333' }}>Sign-up</Text>
           </Button>
         </Content>
       </ImageBackground>

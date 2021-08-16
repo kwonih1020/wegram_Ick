@@ -65,11 +65,11 @@ export default function DetailPage({ navigation, route }) {
 
     let result = await addComment(newComment);
     if (result) {
-      Alert.alert('댓글이 정상적으로 저장되었습니다!');
+      Alert.alert('comments success!');
       await setComment([...comment, newComment]);
     }
   };
-  
+
   return (
     <Container>
       <Content

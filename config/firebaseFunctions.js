@@ -1,9 +1,6 @@
 import * as firebase from 'firebase';
 import 'firebase/firestore';
-import {
-  Alert,
-  AsyncStorage
-} from 'react-native';
+import { Alert, AsyncStorage } from 'react-native';
 
 export async function registration(nickName, email, password, navigation) {
   try {
@@ -15,11 +12,11 @@ export async function registration(nickName, email, password, navigation) {
       email: currentUser.email,
       nickName: nickName,
     });
-    Alert.alert('회원가입 성공!');
+    Alert.alert('Sign up Success!');
     await AsyncStorage.setItem('session', email);
     navigation.push('TabNavigator');
   } catch (err) {
-    Alert.alert('무슨 문제가 있는 것 같아요! => ', err.message);
+    Alert.alert('Error! => ', err.message);
   }
 }
 
@@ -29,7 +26,7 @@ export async function signIn(email, password, navigation) {
     await AsyncStorage.setItem('session', email);
     navigation.push('TabNavigator');
   } catch (err) {
-    Alert.alert('로그인에 문제가 있습니다! ', err.message);
+    Alert.alert('Problem with login ', err.message);
   }
 }
 
@@ -41,7 +38,7 @@ export async function logout(navigation) {
     await firebase.auth().signOut();
     navigation.push('SignInPage');
   } catch (err) {
-    Alert.alert('로그 아웃에 문제가 있습니다! ', err.message);
+    Alert.alert('Problem with sign out ', err.message);
   }
 }
 
@@ -61,7 +58,7 @@ export async function addDiary(content) {
       .set(content);
     return true;
   } catch (err) {
-    Alert.alert('글 작성에 문제가 있습니다! ', err.message);
+    Alert.alert('Problem with upload ', err.message);
     return false;
   }
 }
@@ -82,9 +79,7 @@ export async function getData(setNext, setData) {
   try {
     let data = [];
     const db = firebase.firestore();
-    const first = db.collection('diary')
-      .orderBy('date', 'desc')
-      .limit(5);
+    const first = db.collection('diary').orderBy('date', 'desc').limit(5);
 
     const snapshot = await first.get();
     const currentUser = firebase.auth().currentUser;
@@ -96,7 +91,7 @@ export async function getData(setNext, setData) {
     if (snapshot.docs.length !== 0) {
       last = snapshot.docs[snapshot.docs.length - 1];
     }
-    setNext(last.data().date)
+    setNext(last.data().date);
     let count = 0;
     let limit = snapshot.docs.length;
 
@@ -125,7 +120,6 @@ export async function getData(setNext, setData) {
       }
     });
     // return data
-
   } catch (err) {
     console.log(err);
     return false;
@@ -134,29 +128,29 @@ export async function getData(setNext, setData) {
 
 export async function getNextData(nextDate, setNext) {
   try {
-    console.log("불러올 다음 date: " + nextDate)
-    let data = []
+    console.log('불러올 다음 date: ' + nextDate);
+    let data = [];
     const db = firebase.firestore();
-    const next = db.collection('diary')
+    const next = db
+      .collection('diary')
       .orderBy('date', 'desc')
       .startAfter(nextDate)
       .limit(5);
     const snapshot = await next.get();
     snapshot.docs.map((doc) => {
-      console.log("[페이지네이션 Next]")
-      doc.data()
+      console.log('[페이지네이션 Next]');
+      doc.data();
       data.push(doc.data());
     });
 
     let last;
     if (snapshot.docs.length !== 0) {
       last = snapshot.docs[snapshot.docs.length - 1];
-      setNext(last.data().date)
-      return data
+      setNext(last.data().date);
+      return data;
     } else {
-      return 0
+      return 0;
     }
-
   } catch (err) {
     console.log(err);
     return false;
@@ -179,26 +173,25 @@ export async function addComment(comment) {
       .set(comment);
     return true;
   } catch (err) {
-    Alert.alert('댓글 작성에 문제가 있습니다! ', err.message);
+    Alert.alert('Problem with comments ', err.message);
     return false;
   }
 }
 
 export async function getComment(did) {
-
   const db = firebase.firestore();
-  let data = []
-  let snapshot = await db.collection('comment').where('did', "==", did).get();
+  let data = [];
+  let snapshot = await db.collection('comment').where('did', '==', did).get();
   if (snapshot.empty) {
     console.log('No matching documents.');
     return 0;
   } else {
-    snapshot.forEach(doc => {
+    snapshot.forEach((doc) => {
       console.log(doc.id, '=>', doc.data());
-      data.push(doc.data())
+      data.push(doc.data());
     });
 
-    return data
+    return data;
   }
 }
 
@@ -217,7 +210,7 @@ export async function doLike(uid, did, like) {
         .collection('likes')
         .doc(uid)
         .delete();
-        //uid를 지우는 방식
+      //uid를 지우는 방식
     } else {
       //해제 -> 좋아요
       await db.collection('diary').doc(did).collection('likes').doc(uid).set({
